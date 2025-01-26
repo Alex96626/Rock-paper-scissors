@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Камень, ножницы, бумага</title>
+</head>
+<body>
+  <div class="app"></div>
+  <script>
+    window.application = { 
+      blocks: {},
+      screens: {},
+      renderScreen: (screenName) => {
+        if(!window.application.screens?.[blockName]) {
+          throw Error(`Блока с именем ${blockName} не существует`);
+          return;
+        }
+
+        return window.application.screens[blockName](container);
+      },
+      renderBlock: (blockName, container) => {
+        if(!window.application.blocks?.[blockName]) {
+          throw Error(`Блока с именем ${blockName} не существует`);
+          return;
+        }
+
+        const root = document.querySelector('.app');
+
+        return window.application.blocks[blockName](root);
+      },
+      timers: []
+    } 
+  </script>
+  <script src="./script.js"></script>
+</body>
+</html>

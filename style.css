@@ -1,99 +1,129 @@
-:root {
-    --color-black:#1c1c1c;
-    --color-green:#a9ff03; 
-    --color-lilac: #c58fff; 
-    --color-grey: #4e4e4e;
-    --color-white: #ffffff;
+@import url("./design-system.css");
 
-    --text-size-xs: 12px;
-    --text-size-s: 14px;
-    --text-size-m: 16px;
-    --text-size-l: 18px;
-    --text-size-xl: 20px;
-    --text-size-xxl: 24px;
-    --text-size-xxxl: 28px;
+.page {
+  margin: 0;
+  padding: 0;
 
-    --text-line-m: 1.2;
+  font-family: "Inter", "Times New Roman", serif;
 
-    --border-radius-m: 12px;
+  background-color: var(--color-grey);
+}
 
-    --gap-хs: 8px;
-    --gap-s: 12px;
-    --gap-m: 24px;
-    --gap-l: 48px;
-    --gap-xl: 36px;
-    --gap-xl: 64px;
+.contant {
+  height: 100vh;
+  max-width: 920px;
+  box-sizing: border-box;
 
-    --background-button-start: var(--color-green);
-    --color-button-start-text: var(--color-black); 
-    
-    --background-button-cancel: var(--color-black);
-    --color-button-cancel-text: var(--color-lilac);
-    --color-button-cancel-border: var(--color-lilac);
+  margin: 0 auto;
 
-    --background-button-avatar: var(--color-black);
-    --color-button-avatar-name-text-active: var(--color-white);
-    --color-button-avatar-name-text-inactive: var(--color-grey);
-    --color-button-avatar-text-online: var(--color-green);
-    --color-button-avatar-text-offline: var(--color-lilac);
-    --color-button-avatar-border-active: var(--color-lilac);
-    --color-button-avatar-border-inactive: var(--color-grey);
+  padding: var(--gap-l) var(--gap-m);
 
-    --background-button-figure: var(--color-green);
-    --background-button-figure-inactive: var(--color-grey);
-    --color-button-figure-text: var(--color-black); 
+  border-radius: 20px;
 
-    --background-input: var(--color-black);
-    --color-input-text: var(--color-lilac);
-    --color-input-border: var(--color-lilac);
+  background-color: var(--background-main);
+  background-image: url('./src/images/bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
 
-    --color-title: var(--color-white);
-    --color-text: var(--color-white);
-    --color-timer-text: var(--color-white);
+.contant__login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
-    --color-header-player-nickname-text-active: var(--color-white);
-    --color-header-player-nickname-text-inactive: var(--color-grey);
+.title {
+  font-size: var(--title-text-size);
+  line-height: var(--text-line-m);
 
-    --color-header-VS-text: var(--color-green);
+  color: var(--color-title);
+}
 
-    --color-figure-name-you-won: var(--color-green);
-    --color-figure-name-you-lost: var(--color-grey);
-    --color-figure-name-enemy-won: var(--color-lilac);
-    --color-figure-name-enemy-lost: var(--color-grey);
+.title__rps {
+  margin: var(--gap-l) 0 0 0;
+}
 
-    --button-start-text-size: var(--text-size-xxl);
-    --button-start-text-line: var(--text-line-m);
+.rps-text {
+  width: 25ch;
 
-    --button-cancel-text-size: var(--text-size-m);
-    --button-cancel-text-line: var(--text-line-m);
+  text-align: center;
 
-    --button-figure-text-size: var(--text-size-xs);
-    --button-figure-text-line: var(--text-line-m);
+  font-size: var(--text-text-size);
+  line-height: var(--text-text-line);
 
-    --button-avatar-name-text-size: var(--text-size-xl);
-    --button-avatar-name-text-line: var(--text-line-m);
+  color: var(--text-color);
 
-    --button-avatar-online-text-size: var(--text-size-s);
-    --button-avatar-offline-text-line: var(--text-line-m);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
 
-    --input-text-size: var(--text-size-xxl);
-    --input-text-line: var(--text-line-m);
+.form-login {
+  max-width: 100%;
 
-    --title-text-size: var(--text-size-xxxl);
-    --title-text-line: var(--text-line-m);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-s);
+}
 
-    --text-text-size: var(--text-size-l);
-    --text-text-line: var(--text-line-m);
+.form-login__theme__primary {
+  margin-top: var(--gap-l);
+}
 
-    --timer-text-size: var(--text-size-xxl);
-    --timer-text-line: var(--text-line-m);
+.button {
+  width: 420px;
+  max-width: 100%;
+  box-sizing: border-box;
+  
+  padding: var(--gap-s) var(--gap-m);
 
-    --header-player-nickname-text-size: var(--text-size-l);
-    --header-player-nickname-text-line: var(--text-line-m);
+  border: none;
 
-    --header-VS-text-size: var(--text-size-xl);
-    --header-VS-text-line: var(--text-line-m);
+  border-radius: 10px;
 
-    --figure-name-text-size: var(--text-size-l);
-    --figure-name-text-line: var(--text-line-m);
+  background-color: transparent;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+
+  cursor: pointer;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button_theme-secondary {
+  border: 1px solid var(--color-button-cancel-border);
+
+  color: var(--color-button-cancel-text);
+}
+
+.button_theme-primary {
+  border: 1px solid var(--color-button-cancel-border);
+
+  background-color: var(--background-button-start);
+
+  color: var(--color-button-start-text);
+
+  font-size: var(--button-start-text-size);
+}
+
+.form-login__value {
+  font-size: var(--button-start-text-size);
+  line-height: var(--button-start-text-line);
+
+  color: var(--color-button-cancel-text);
+}
+
+.form-login__value::placeholder {
+  font-size: var(--button-start-text-size);
+  line-height: var(--button-start-text-line);
+
+  color: var(--color-button-cancel-text);
 }

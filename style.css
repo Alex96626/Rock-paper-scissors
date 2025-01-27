@@ -1,0 +1,99 @@
+:root {
+    --color-black:#1c1c1c;
+    --color-green:#a9ff03; 
+    --color-lilac: #c58fff; 
+    --color-grey: #4e4e4e;
+    --color-white: #ffffff;
+
+    --text-size-xs: 12px;
+    --text-size-s: 14px;
+    --text-size-m: 16px;
+    --text-size-l: 18px;
+    --text-size-xl: 20px;
+    --text-size-xxl: 24px;
+    --text-size-xxxl: 28px;
+
+    --text-line-m: 1.2;
+
+    --border-radius-m: 12px;
+
+    --gap-хs: 8px;
+    --gap-s: 12px;
+    --gap-m: 24px;
+    --gap-l: 48px;
+    --gap-xl: 36px;
+    --gap-xl: 64px;
+
+    --background-button-start: var(--color-green);
+    --color-button-start-text: var(--color-black); 
+    
+    --background-button-cancel: var(--color-black);
+    --color-button-cancel-text: var(--color-lilac);
+    --color-button-cancel-border: var(--color-lilac);
+
+    --background-button-avatar: var(--color-black);
+    --color-button-avatar-name-text-active: var(--color-white);
+    --color-button-avatar-name-text-inactive: var(--color-grey);
+    --color-button-avatar-text-online: var(--color-green);
+    --color-button-avatar-text-offline: var(--color-lilac);
+    --color-button-avatar-border-active: var(--color-lilac);
+    --color-button-avatar-border-inactive: var(--color-grey);
+
+    --background-button-figure: var(--color-green);
+    --background-button-figure-inactive: var(--color-grey);
+    --color-button-figure-text: var(--color-black); 
+
+    --background-input: var(--color-black);
+    --color-input-text: var(--color-lilac);
+    --color-input-border: var(--color-lilac);
+
+    --color-title: var(--color-white);
+    --color-text: var(--color-white);
+    --color-timer-text: var(--color-white);
+
+    --color-header-player-nickname-text-active: var(--color-white);
+    --color-header-player-nickname-text-inactive: var(--color-grey);
+
+    --color-header-VS-text: var(--color-green);
+
+    --color-figure-name-you-won: var(--color-green);
+    --color-figure-name-you-lost: var(--color-grey);
+    --color-figure-name-enemy-won: var(--color-lilac);
+    --color-figure-name-enemy-lost: var(--color-grey);
+
+    --button-start-text-size: var(--text-size-xxl);
+    --button-start-text-line: var(--text-line-m);
+
+    --button-cancel-text-size: var(--text-size-m);
+    --button-cancel-text-line: var(--text-line-m);
+
+    --button-figure-text-size: var(--text-size-xs);
+    --button-figure-text-line: var(--text-line-m);
+
+    --button-avatar-name-text-size: var(--text-size-xl);
+    --button-avatar-name-text-line: var(--text-line-m);
+
+    --button-avatar-online-text-size: var(--text-size-s);
+    --button-avatar-offline-text-line: var(--text-line-m);
+
+    --input-text-size: var(--text-size-xxl);
+    --input-text-line: var(--text-line-m);
+
+    --title-text-size: var(--text-size-xxxl);
+    --title-text-line: var(--text-line-m);
+
+    --text-text-size: var(--text-size-l);
+    --text-text-line: var(--text-line-m);
+
+    --timer-text-size: var(--text-size-xxl);
+    --timer-text-line: var(--text-line-m);
+
+    --header-player-nickname-text-size: var(--text-size-l);
+    --header-player-nickname-text-line: var(--text-line-m);
+
+    --header-VS-text-size: var(--text-size-xl);
+    --header-VS-text-line: var(--text-line-m);
+
+    --figure-name-text-size: var(--text-size-l);
+    --figure-name-text-line: var(--text-line-m);
+}

@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
   <title>Камень, ножницы, бумага</title>
 </head>
-<body>
+<body class="page">
   <div class="app"></div>
   <script>
     window.application = { 
@@ -17,6 +18,9 @@
           return;
         }
 
+        const root = document.querySelector('.app');
+        root.innerHTML = '';
+
         return window.application.screens[blockName](container);
       },
       renderBlock: (blockName, container) => {
@@ -25,9 +29,7 @@
           return;
         }
 
-        const root = document.querySelector('.app');
-
-        return window.application.blocks[blockName](root);
+        return window.application.blocks[blockName](container);
       },
       timers: []
     } 

@@ -146,6 +146,10 @@ const rendercontentBlock = (container) => {
 
 window.application.blocks['content'] = rendercontentBlock; 
 
+function renderStartPage () {
+  
+}
+
 window.application.renderBlock('content', document.querySelector('.app'));
 
 window.application.renderBlock('rpc-picture', document.querySelector('.content'));

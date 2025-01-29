@@ -20,20 +20,21 @@
 
         const root = document.querySelector('.app');
         root.innerHTML = '';
-
-        return window.application.screens[blockName](container);
+        
+        return window.application.screens[screenName]();
       },
       renderBlock: (blockName, container) => {
         if(!window.application.blocks?.[blockName]) {
           throw Error(`Блока с именем ${blockName} не существует`);
           return;
         }
-
+        
         return window.application.blocks[blockName](container);
       },
       timers: []
     } 
   </script>
   <script src="./script.js"></script>
+  <script src="./components/start-game.js"></script>
 </body>
 </html>

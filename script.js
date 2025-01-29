@@ -90,7 +90,7 @@ window.application.blocks['title'] = renderTitle;
 
 const renderText = (container) => {
   const textTemplate = { 
-    block: 'h2',
+    block: 'p',
     cls: 'rps-text',
     content: 'Rock-Paper-Scissors.Fight in the big arena in front of a million spectators',
   };
@@ -120,7 +120,6 @@ const renderFormLogin = (container) => {
         cls: ['button', 'button_theme-primary'],
         attrs: {
           'type': 'text',
-          'placeholder': 'Login',
         },
         content: 'Начать игру'
       }
@@ -134,24 +133,24 @@ const renderFormLogin = (container) => {
 
 window.application.blocks['fomtLogin'] = renderFormLogin;
 
-const renderContantBlock = (container) => {
-  const contantTemplate = { 
+const rendercontentBlock = (container) => {
+  const contentTemplate = { 
     block: 'div', 
-    cls: ['contant', 'contant__login'],
+    cls: ['content', 'content__login'],
   };
 
-  const contant = browserTemplateEngine(contantTemplate);
+  const content = browserTemplateEngine(contentTemplate);
   
-  container.appendChild(contant);
+  container.appendChild(content);
 }
 
-window.application.blocks['contant'] = renderContantBlock; 
+window.application.blocks['content'] = rendercontentBlock; 
 
-window.application.renderBlock('contant', document.querySelector('.app'));
+window.application.renderBlock('content', document.querySelector('.app'));
 
-window.application.renderBlock('rpc-picture', document.querySelector('.contant'));
-window.application.renderBlock('title', document.querySelector('.contant'));
-window.application.renderBlock('text', document.querySelector('.contant'));
-window.application.renderBlock('fomtLogin', document.querySelector('.contant'));
+window.application.renderBlock('rpc-picture', document.querySelector('.content'));
+window.application.renderBlock('title', document.querySelector('.content'));
+window.application.renderBlock('text', document.querySelector('.content'));
+window.application.renderBlock('fomtLogin', document.querySelector('.content'));
 
 

@@ -1,0 +1,65 @@
+.user-info {
+    display: flex;
+    justify-content: flex-end;
+    gap: 35px;
+}
+
+.user-info__nickname {
+    font-size: var( --header-player-nickname-text-size);
+    line-height: var(--header-player-nickname-text-line);
+    color: var(--color-header-player-nickname-text-inactive);
+}
+
+.user-info__avatar {
+    width: 49px;
+    height: 49px;
+    box-sizing: border-box;
+
+    border-radius: var(--gap-xl);
+
+    background-color: red;
+}
+
+.title_lobby {
+    margin-top: 93px;
+
+    text-align: center;
+}
+
+.rps-text__lobby {
+    margin: 10px auto 0 auto;
+}
+
+.opponents {
+    list-style-type: none;
+}
+
+.opponents__item {
+    display: flex;
+    align-items: center;
+    gap: var(--gap-хs);
+
+    padding: 4px;
+
+    border-radius: 10px;
+
+    border: 1px solid var(--color-button-avatar-border-active);
+
+    cursor: pointer;
+}
+
+.opponents__avatar {
+    width: 75px;
+    height: 75px;
+    box-sizing: border-box;
+
+    border-radius: 10px;
+
+    background-color: red;
+}
+
+.opponents__username {
+    font-size: var(--button-avatar-name-text-size);
+    line-height: var(--button-avatar-name-text-line);
+    color: var(--color-header-player-nickname-text-active);
+}

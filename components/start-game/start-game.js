@@ -1,3 +1,5 @@
+
+
 const renderRpcPicture = (container) => {
     const pictureTemplate = { 
       block: 'div', 
@@ -85,17 +87,19 @@ const renderRpcPicture = (container) => {
       const loginValue = formData.get('login'); 
       const params = new URLSearchParams({
         login: loginValue
-      })
+      }).toString()
   
-      const login = await fetch(`${BACKEND_URL}/login?${params}`)
+      const login = await fetch(`${BACKEND_URL}login?${params}`)
       .then(response => response.json())
       .then(data => {
-        localStorage.setItem('token', data.token)
+        localStorage.setItem('token', data.token);
+
+        window.application.renderScreen('lobbyPage');
       })
-      .then(data => console.log(data))
-      .catch(error => {
-        throw Error(error);
-      })
+      // .catch(error => {
+      //   throw Error(error);
+      // })
+
   
     }
   

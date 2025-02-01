@@ -1,3 +1,4 @@
+@import url("./components/lobby/lobby.css");
 @import url("./design-system.css");
 
 .page {
@@ -10,7 +11,7 @@
 }
 
 .content {
-  height: 100vh;
+  min-height: 100vh;
   max-width: 920px;
   box-sizing: border-box;
 
@@ -21,7 +22,7 @@
   border-radius: 20px;
 
   background-color: var(--background-main);
-  background-image: url('./src/images/bg.png');
+
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -32,6 +33,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  background-image: url('./src/images/bg.png');
 }
 
 .title {

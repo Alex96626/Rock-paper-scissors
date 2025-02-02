@@ -166,7 +166,6 @@ const renderLobbyPage  = () => {
     }
     currentOpponentsList.innerHTML = '';
     currentOpponentsList.appendChild(newOpponentsList);
-    // window.application.renderBlock('opponents', content);
   }, 1000)
 }
 

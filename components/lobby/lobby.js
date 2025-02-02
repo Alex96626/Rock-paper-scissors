@@ -64,18 +64,40 @@ const renderTitleLobby = (container) => {
 window.application.blocks['titleLobby'] = renderTitleLobby;
 
 const renderTextLobby = (container) => {
-    const textLobbyTemplate = { 
-      block: 'p',
-      cls: ['rps-text', 'rps-text__lobby'],
-      content: 'Битва на большой арене под взгляды миллиона спеткторов',
-    };
-  
-    const text = browserTemplateEngine(textLobbyTemplate);
-  
-    container.appendChild(text);
-  }
+  const textLobbyTemplate = { 
+    block: 'p',
+    cls: ['rps-text', 'rps-text__lobby'],
+    content: 'Битва на большой арене под взгляды миллиона спеткторов',
+  };
+
+  const text = browserTemplateEngine(textLobbyTemplate);
+
+  container.appendChild(text);
+}
   
 window.application.blocks['textLobby'] = renderTextLobby;
+
+const oppontntTemplate = (opponentData) => {
+  return {
+    block: 'li',
+    cls: 'opponents__item',
+    content: [
+      {
+          block: 'img',
+          cls: 'opponents__avatar',
+          attrs: {
+            alt:  opponentData?.login,
+            src: opponentData?.avatar,
+          }
+      },
+      {
+        block: 'span',
+        cls: 'opponents__username',
+        content: opponentData?.login
+      }
+    ]
+  }
+}
 
 const renderOpponents = async (container) => {
   const opponentsList = await getPlayerList(); 
@@ -88,25 +110,7 @@ const renderOpponents = async (container) => {
   const opponentsTemplate = { 
         block: 'ul',
         cls: 'opponents',
-        content: opponentsList.map( opponent =>({
-            block: 'li',
-            cls: 'opponents__item',
-            content: [
-            {
-                block: 'img',
-                cls: 'opponents__avatar',
-                attrs: {
-                  alt:  opponent.login,
-                  src: opponent.avatar,
-                }
-            },
-            {
-              block: 'span',
-              cls: 'opponents__username',
-              content: opponent.login
-            }
-          ]
-        }))
+        content: opponentsList.map( opponent =>oppontntTemplate())
   };
 
   const opponents = browserTemplateEngine(opponentsTemplate);
@@ -115,6 +119,22 @@ const renderOpponents = async (container) => {
 }
 
 window.application.blocks['opponents'] = renderOpponents;
+
+
+
+const renderStartMatcрButton = (container) => {
+  const startMatchButtonTemplate = { 
+    block: 'button',
+    cls: ['button', 'button_theme-primary', 'button_start-match'],
+    content: 'Начать битву',
+  };
+
+  const startMatchButton = browserTemplateEngine(startMatchButtonTemplate);
+
+  container.appendChild(startMatchButton);
+}
+
+window.application.blocks['startMatch'] = renderStartMatcрButton;
 
 const renderLobbyPage  = () => {
   const fragment = new DocumentFragment();
@@ -126,17 +146,29 @@ const renderLobbyPage  = () => {
   window.application.renderBlock('userInfo', content);
   window.application.renderBlock('titleLobby', content);
   window.application.renderBlock('textLobby', content);
-  (() => window.application.renderBlock('opponents', content))();
+  Promise.resolve((() =>  window.application.renderBlock('opponents', content))())
+  .then (response => {
+    window.application.renderBlock('startMatch', content);
+  })
 
-  setInterval(() => {
-    window.application.renderBlock('opponents', content);
-  }, 1000)
- 
   const app = document.querySelector('.app');
 
   app.appendChild(fragment);
-  
+
+  setInterval(async () => {
+    const currentOpponentsList = document.querySelector('.opponents');
+    
+    const opponentsList = await getPlayerList(); 
+    const newOpponentsList = new DocumentFragment();
+
+    for (const opponent of opponentsList) {
+      newOpponentsList.append(browserTemplateEngine(oppontntTemplate(opponent)))
+    }
+    currentOpponentsList.innerHTML = '';
+    currentOpponentsList.appendChild(newOpponentsList);
+  }, 1000)
 }
 
 window.application.screens['lobbyPage'] = renderLobbyPage; 
+
 

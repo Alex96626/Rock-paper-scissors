@@ -39,4 +39,3 @@ function browserTemplateEngine(block) {
 }
 
 const BACKEND_URL = 'https://skypro-rock-scissors-paper-backend.vercel.app/';
-

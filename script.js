@@ -38,4 +38,13 @@ function browserTemplateEngine(block) {
   return elem;
 }
 
+const getUserStatus = async ({token, gameId}) => {
+    const params = new URLSearchParams({
+        token,
+        id: gameId
+    }).toString();
+
+    return fetch(`${BACKEND_URL}/game-status?${params}`)
+    .then(response => response.json());
+}
 const BACKEND_URL = 'https://skypro-rock-scissors-paper-backend.vercel.app/';

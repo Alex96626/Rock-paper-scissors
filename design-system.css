@@ -15,14 +15,18 @@
 
     --text-line-m: 1.2;
 
-    --border-radius-m: 12px;
-
+    --border-radius-s: 10px;
+    --border-radius-l: 20px;
+    
+    --gap-xxs: 4px;
     --gap-хs: 8px;
     --gap-s: 20px;
     --gap-m: 24px;
     --gap-l: 48px;
     --gap-xl: 36px;
     --gap-xl: 64px;
+
+    --background-page: var(--color-grey);
 
     --background-main: var(--color-black);
 
@@ -49,7 +53,7 @@
     --color-input-border: var(--color-lilac);
 
     --color-title: var(--color-white);
-    --color-text: var(--color-white);
+    --color-text: var(--color-grey);
     --color-timer-text: var(--color-white);
 
     --color-header-player-nickname-text-active: var(--color-white);
@@ -85,8 +89,7 @@
 
     --text-text-size: var(--text-size-l);
     --text-text-line: var(--text-line-m);
-    --text-color: var(--color-grey);
-
+    
     --timer-text-size: var(--text-size-xxl);
     --timer-text-line: var(--text-line-m);
 

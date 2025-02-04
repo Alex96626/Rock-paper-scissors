@@ -1,0 +1,53 @@
+.content__waiting {
+  display: flex;
+  flex-direction: column;
+}
+
+.waiting-animation {
+  flex: 1 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.waiting-animation__item {
+  width: 25px;
+  height: 25px;
+
+  border-radius: 50%;
+  display: block;
+  margin-left: 30px;
+
+  -webkit-animation: rotate 10s linear infinite;
+  animation: rotate 10s linear infinite;
+}
+
+.waiting-animation__item_type-secondary {
+  background: var(--color-lilac);
+  box-shadow: 30px 30px 20px 2px var(--color-lilac);
+}
+
+.waiting__text {
+  align-self: center;
+
+  font-size: 48px;
+  color: var(--color-green);
+}
+
+@keyframes rotate {
+  from {
+    transform: rotateZ(360deg);
+  }
+  to {
+    transform: rotateZ(0deg);
+  }
+}
+
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotateZ(360deg);
+  }
+  to {
+    -webkit-transform: rotateZ(0deg);
+  }
+}

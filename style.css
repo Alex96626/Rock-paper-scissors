@@ -1,4 +1,5 @@
 @import url("./components/lobby/lobby.css");
+@import url("./components/waiting/waiting.css");
 @import url("./design-system.css");
 
 .page {

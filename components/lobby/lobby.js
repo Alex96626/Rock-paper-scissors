@@ -1,11 +1,24 @@
 const getPlayerList = async () => {
   const params = new URLSearchParams({
-    'token': localStorage.getItem('token'),
+    'token': window.application.token,
   }).toString();
   
   return fetch(`${BACKEND_URL}player-list?${params}`)
   .then(response => response.json())
   .then(data => data.list); 
+}
+
+const handlerUpdateOpponents = async () => {
+  const currentOpponentsList = document.querySelector('.opponents');
+    
+    const opponentsList = await getPlayerList(); 
+    const newOpponentsList = new DocumentFragment();
+
+    for (const opponent of opponentsList) {
+      newOpponentsList.append(browserTemplateEngine(oppontntTemplate(opponent)))
+    }
+    currentOpponentsList.innerHTML = '';
+    currentOpponentsList.appendChild(newOpponentsList);
 }
 
 const renderContentBlockLobby = (container) => {
@@ -45,7 +58,7 @@ const renderUserInfo = (container) => {
     const userInfo = browserTemplateEngine(userInfoTemplate);
   
     container.appendChild(userInfo);
-  }
+}
   
 window.application.blocks['userInfo'] = renderUserInfo;
 
@@ -83,14 +96,6 @@ const oppontntTemplate = (opponentData) => {
     cls: 'opponents__item',
     content: [
       {
-          block: 'img',
-          cls: 'opponents__avatar',
-          attrs: {
-            alt:  opponentData?.login,
-            src: opponentData?.avatar,
-          }
-      },
-      {
         block: 'span',
         cls: 'opponents__username',
         content: opponentData?.login
@@ -110,7 +115,7 @@ const renderOpponents = async (container) => {
   const opponentsTemplate = { 
         block: 'ul',
         cls: 'opponents',
-        content: opponentsList.map( opponent =>oppontntTemplate())
+        content: opponentsList.map( opponent =>oppontntTemplate(opponent))
   };
 
   const opponents = browserTemplateEngine(opponentsTemplate);
@@ -120,8 +125,6 @@ const renderOpponents = async (container) => {
 
 window.application.blocks['opponents'] = renderOpponents;
 
-
-
 const renderStartMatcрButton = (container) => {
   const startMatchButtonTemplate = { 
     block: 'button',
@@ -130,6 +133,24 @@ const renderStartMatcрButton = (container) => {
   };
 
   const startMatchButton = browserTemplateEngine(startMatchButtonTemplate);
+
+  startMatchButton.addEventListener('click', async () => {
+    const token =  window.application.token;
+    const startMatch = await getStartMatch(token);
+
+    if (startMatch.status === 'error') {
+      alert(startMatch.message);
+      return;
+    }
+
+    window.application.gameId = startMatch[`player-status`].game.id;
+
+    for (const timer of window.application.timers) {
+      clearInterval(timer);
+    }
+
+    window.application.renderScreen('waitingPage');
+  })
 
   container.appendChild(startMatchButton);
 }
@@ -146,6 +167,7 @@ const renderLobbyPage  = () => {
   window.application.renderBlock('userInfo', content);
   window.application.renderBlock('titleLobby', content);
   window.application.renderBlock('textLobby', content);
+
   Promise.resolve((() =>  window.application.renderBlock('opponents', content))())
   .then (response => {
     window.application.renderBlock('startMatch', content);
@@ -154,19 +176,7 @@ const renderLobbyPage  = () => {
   const app = document.querySelector('.app');
 
   app.appendChild(fragment);
-
-  setInterval(async () => {
-    const currentOpponentsList = document.querySelector('.opponents');
-    
-    const opponentsList = await getPlayerList(); 
-    const newOpponentsList = new DocumentFragment();
-
-    for (const opponent of opponentsList) {
-      newOpponentsList.append(browserTemplateEngine(oppontntTemplate(opponent)))
-    }
-    currentOpponentsList.innerHTML = '';
-    currentOpponentsList.appendChild(newOpponentsList);
-  }, 1000)
+  window.application.timers.push(setInterval(handlerUpdateOpponents, 1000));
 }
 
 window.application.screens['lobbyPage'] = renderLobbyPage; 

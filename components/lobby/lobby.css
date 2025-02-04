@@ -10,16 +10,6 @@
     color: var(--color-header-player-nickname-text-inactive);
 }
 
-.user-info__avatar {
-    width: 49px;
-    height: 49px;
-    box-sizing: border-box;
-
-    border-radius: var(--gap-xl);
-
-    background-color: red;
-}
-
 .title_lobby {
     margin-top: 93px;
 
@@ -31,7 +21,12 @@
 }
 
 .opponents {
+    display: flex;
+    flex-direction: column;
+    gap: var(--text-size-xs);
+
     margin: var(--gap-xl) 0 0;
+    padding: 0;
 
     list-style-type: none;
 }
@@ -39,9 +34,9 @@
 .opponents__item {
     display: flex;
     align-items: center;
-    gap: var(--gap-хs);
+    gap: var(--text-size-xs);
 
-    padding: 4px;
+    padding: 12px;
 
     border-radius: 10px;
 

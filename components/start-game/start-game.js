@@ -92,8 +92,7 @@ const renderRpcPicture = (container) => {
       const login = await fetch(`${BACKEND_URL}login?${params}`)
       .then(response => response.json())
       .then(data => {
-        localStorage.setItem('token', data.token);
-
+        window.application.token = data.token;
         window.application.renderScreen('lobbyPage');
       })
       // .catch(error => {

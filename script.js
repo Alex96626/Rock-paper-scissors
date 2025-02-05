@@ -38,6 +38,15 @@ function browserTemplateEngine(block) {
   return elem;
 }
 
+const getStartMatch = async (token) => {
+    const params = new URLSearchParams({
+        token,
+    }).toString();
+
+    return fetch(`${BACKEND_URL}/start?${params}`)
+    .then(response => response.json());
+}
+
 const getUserStatus = async ({token, gameId}) => {
     const params = new URLSearchParams({
         token,

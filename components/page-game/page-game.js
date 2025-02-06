@@ -56,10 +56,10 @@ const renderHeader = (container) => {
   
   window.application.blocks['rivals-wrapper'] = renderHeader;
   
-  const renderMainContent = (container) => {
-    const mainContentTemplate = {
-      block: 'main',
-      cls: ['main-content', 'main-content__position'],
+  const renderGameWrapper = (container) => {
+    const gameWrapperTemplate = {
+      block: 'div',
+      cls: ['game-wrapper', 'game-wrapper__position'],
       content: [
         {
           block: 'div',
@@ -80,7 +80,7 @@ const renderHeader = (container) => {
         },
         {
           block: 'div',
-          cls: 'main-content__image-figure-initial',
+          cls: 'game-wrapper__image-figure-initial',
           content: [
             {
               block: 'img',
@@ -167,25 +167,25 @@ const renderHeader = (container) => {
       ],
     };
   
-    const mainContent = browserTemplateEngine(mainContentTemplate);
+    const gameWrapper = browserTemplateEngine(gameWrapperTemplate);
   
-    container.appendChild(mainContent);
+    container.appendChild(gameWrapper);
   };
   
-  window.application.blocks['main-content'] = renderMainContent;
+  window.application.blocks['game-wrapper'] = renderGameWrapper;
   
-  const renderContentBlock = (container) => {
-    const contentTemplate = {
+  const renderContentPageGameBlock = (container) => {
+    const contentPageGameTemplate = {
       block: 'div',
       cls: 'content',
     };
   
-    const content = browserTemplateEngine(contentTemplate);
+    const content = browserTemplateEngine(contentPageGameTemplate);
   
     container.appendChild(content);
   };
   
-  window.application.blocks['content'] = renderContentBlock;
+  window.application.blocks['content'] = renderContentPageGameBlock;
   
   function renderGamePage() {
     const fragment = new DocumentFragment();
@@ -195,7 +195,7 @@ const renderHeader = (container) => {
     const content = fragment.querySelector('.content');
   
     window.application.renderBlock('rivals-wrapper', content);
-    window.application.renderBlock('main-content', content);
+    window.application.renderBlock('game-wrapper', content);
   
     const app = document.querySelector(".app");
   
@@ -204,5 +204,5 @@ const renderHeader = (container) => {
   
   window.application.screens['game-page'] = renderGamePage;
   
-  window.application.renderScreen('game-page');
+  
   

@@ -12,9 +12,12 @@ const handlerUpdateOpponents = async () => {
   const currentOpponentsList = document.querySelector('.opponents');
     
     const opponentsList = await getPlayerList(); 
+    
+    const opponentsListWithoutPlayer = Object.values(opponentsList).filter((opponent) => opponent.you === undefined);
+
     const newOpponentsList = new DocumentFragment();
 
-    for (const opponent of opponentsList) {
+    for (const opponent of opponentsListWithoutPlayer) {
       newOpponentsList.append(browserTemplateEngine(oppontntTemplate(opponent)))
     }
     currentOpponentsList.innerHTML = '';
@@ -34,7 +37,11 @@ const renderContentBlockLobby = (container) => {
 
 window.application.blocks['contentLobby'] = renderContentBlockLobby; 
 
-const renderUserInfo = (container) => {
+const renderUserInfo = async (container) => {
+  const currentOpponentsList = await getPlayerList();
+  const getPlayer = currentOpponentsList.find(player => player.you);
+  const playerName = getPlayer.login;
+
     const userInfoTemplate = { 
       block: 'header', 
       cls: 'user-info',
@@ -42,7 +49,7 @@ const renderUserInfo = (container) => {
         {
             block: 'p',
             cls: 'user-info__nickname',
-            content: 'User',
+            content: playerName,
         },
         {
           block: 'img',
@@ -106,6 +113,7 @@ const oppontntTemplate = (opponentData) => {
 
 const renderOpponents = async (container) => {
   const opponentsList = await getPlayerList(); 
+  const opponentsListWithoutPlayer = Object.values(opponentsList).filter((opponent) => opponent.you === undefined);
 
   const currentOpponentsList = document.querySelector('.opponents');
   if(currentOpponentsList) {
@@ -115,7 +123,7 @@ const renderOpponents = async (container) => {
   const opponentsTemplate = { 
         block: 'ul',
         cls: 'opponents',
-        content: opponentsList.map( opponent =>oppontntTemplate(opponent))
+        content: opponentsListWithoutPlayer.map( (opponent) =>oppontntTemplate(opponent))
   };
 
   const opponents = browserTemplateEngine(opponentsTemplate);
@@ -157,25 +165,22 @@ const renderStartMatcрButton = (container) => {
 
 window.application.blocks['startMatch'] = renderStartMatcрButton;
 
-const renderLobbyPage  = () => {
+const renderLobbyPage = async () => {
   const fragment = new DocumentFragment();
 
   window.application.renderBlock('contentLobby', fragment);
 
   const content = fragment.querySelector('.content');
   
-  window.application.renderBlock('userInfo', content);
+  await window.application.renderBlock('userInfo', content);
   window.application.renderBlock('titleLobby', content);
   window.application.renderBlock('textLobby', content);
-
-  Promise.resolve((() =>  window.application.renderBlock('opponents', content))())
-  .then (response => {
-    window.application.renderBlock('startMatch', content);
-  })
+  await (() =>  window.application.renderBlock('opponents', content))()
+  window.application.renderBlock('startMatch', content);
 
   const app = document.querySelector('.app');
-
   app.appendChild(fragment);
+  
   window.application.timers.push(setInterval(handlerUpdateOpponents, 1000));
 }
 

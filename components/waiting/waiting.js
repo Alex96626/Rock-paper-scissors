@@ -90,6 +90,26 @@ const renderWaitingPage = async () => {
   const app = document.querySelector('.app');
 
   app.appendChild(fragment);
+
+  setInterval( async () => {
+    const checkGameStatusParams = new URLSearchParams({ 
+      token: window.application.token,
+      id: window.application.gameId,
+    }).toString();
+
+   const status =  await fetch(`${BACKEND_URL}game-status?${checkGameStatusParams}`)
+   .then(response => response.json());
+
+   const statusValue = status['game-status'].status;
+
+   if(statusValue === 'waiting-for-your-move') {
+    // window.application.renderScreen[''];
+    console.log('Игра началась!!!')
+   }
+  
+  }, 1000)
 }
 
 window.application.screens['waitingPage'] = renderWaitingPage; 
+
+

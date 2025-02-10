@@ -96,12 +96,12 @@ const renderWaitingPage = () => {
       token: window.application.token,
       id: window.application.gameId,
     }).toString();
-    console.log(window.application.token)
+
    const status =  await fetch(`${BACKEND_URL}game-status?${checkGameStatusParams}`)
    .then(response => response.json());
 
    const statusValue = status['game-status'].status;
-   console.log(statusValue)
+
    if(statusValue === 'waiting-for-your-move') {
     // window.application.renderScreen[''];
     console.log('Игра началась!!!')

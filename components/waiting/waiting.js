@@ -74,14 +74,14 @@ const renderWaitingPageText = (container) => {
 
 window.application.blocks['waitingBlockText'] = renderWaitingPageText;
 
-const renderWaitingPage = () => {
+const renderWaitingPage = async () => {
   const fragment = new DocumentFragment();
 
   window.application.renderBlock('contentWaitingPage', fragment);
 
   const content = fragment.querySelector('.content');
 
-  window.application.renderBlock('userInfo', content);
+  await window.application.renderBlock('userInfo', content);
 
   window.application.renderBlock('waitingBlock', content);
 

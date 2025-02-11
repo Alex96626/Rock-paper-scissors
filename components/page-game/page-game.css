@@ -46,7 +46,7 @@
   position: relative;
   height: 162px;
   width: 312px;
-  background-image: url('/images-page-game/timer.png');
+  background-image: url('/components/page-game/images-page-game/timer.png');
   background-color: var(--background-main);
   background-position: center;
   background-repeat: no-repeat;
@@ -91,25 +91,6 @@
 
 .button:focus {
   outline: none;
-}
-
-.button_theme_secondary {
-  width: 420px;
-  max-width: 100%;
-  border: 1px solid var(--color-button-cancel-border);
-  color: var(--color-button-cancel-text);
-  padding: var(--gap-s) var(--gap-m);
-
-  font-size: var(--button-cancel-text-size);
-  line-height: var(--button-cancel-text-line);
-  font-weight: 600;
-}
-
-.button__position {
-
-  display: flex;
-  justify-content: center;
-  margin: var(--gap-xl) auto 0;
 }
 
 .three-buttons {

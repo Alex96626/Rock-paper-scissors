@@ -56,4 +56,31 @@ const getUserStatus = async ({token, gameId}) => {
     return fetch(`${BACKEND_URL}/game-status?${params}`)
     .then(response => response.json());
 }
+
+function game ({token, gameId, gameMove}) {
+    const params = new URLSearchParams({
+        token,
+        id: gameId,
+        move : gameMove,
+    }).toString();
+
+    return fetch(`${BACKEND_URL}/play?${params}`)
+    .then(response => response.json())
+    .then((data) => {
+      if (data['game-status'].status === "lose") {
+        window.application.renderScreen('page-lose');
+      }
+      if (data['game-status'].status === "win") {
+        window.application.renderScreen('page-win');
+      }
+      if (data['game-status'].status === 'waiting-for-your-move') {
+        alert('ничья-повторите ход');
+        return;
+      }
+      if (data['game-status'].status === "waiting-for-enemy-move") {
+        window.application.renderScreen('waitingPage')
+      }
+    });
+    
+}
 const BACKEND_URL = 'https://skypro-rock-scissors-paper-backend.vercel.app/';

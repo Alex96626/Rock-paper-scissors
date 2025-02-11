@@ -33,27 +33,20 @@
   font-size: var(--header-VS-text-size);
 }
 
-.game-wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.game-wrapper__position {
-  margin-top: var(--gap-хs);
-}
-
 .image-timer {
   display: flex;
   justify-content: center;
+}
+
+.image-timer__position {
+  margin-top: var(--gap-хs);
 }
 
 .image-timer__background {
   position: relative;
   height: 162px;
   width: 312px;
-  background-image: url("/components/page-game/images-page-game/timer.png");
+  background-image: url('/images-page-game/timer.png');
   background-color: var(--background-main);
   background-position: center;
   background-repeat: no-repeat;
@@ -71,7 +64,8 @@
 }
 
 .game-wrapper__image-figure-initial {
-  margin-top: var(--gap-xl);
+  margin: var(--gap-xl) 0 0;
+  text-align: center;
 }
 
 .title {
@@ -112,7 +106,10 @@
 }
 
 .button__position {
-  margin-top: var(--gap-xl);
+
+  display: flex;
+  justify-content: center;
+  margin: var(--gap-xl) auto 0;
 }
 
 .three-buttons {
@@ -128,6 +125,7 @@
 }
 
 .button_theme_third {
+  
   background-color: var(--background-button-figure);
   padding: var(--gap-s) var(--gap-m);
   border: none;

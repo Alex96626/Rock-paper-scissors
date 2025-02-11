@@ -97,7 +97,7 @@ const renderImageTimer = (container) => {
 
   let timerGame = 120;
 
-  const timer = setInterval( ()=> {
+  const timer = setInterval( async ()=> {
     timerGame --;
     textTimer.textContent = timerGame + 's';
     if (timerGame <= 0) {
@@ -109,7 +109,7 @@ const renderImageTimer = (container) => {
       const token = window.application.token;
       const gameId = window.application.gameId;
       const gameMove = randomFigure;
-      game();  
+      await game({token, gameId, gameMove});  
     }
   }, 1000);
 };
@@ -233,8 +233,8 @@ const renderThreeButton = (container) => {
 
   const handlerGame =  async (event) => {
 
-    const targetBlock = event.target.closest('button')
-    if (!targetBlock) return;
+    const targetBlock = event.target.closest('.button_theme_third');
+    if (!targetBlock && !event.target.classList.contains('button_theme_third') ) return;
       
     figureName = event.target.closest('button').dataset.figure;
     
@@ -245,7 +245,7 @@ const renderThreeButton = (container) => {
     const token = window.application.token;
     const gameId = window.application.gameId;
     const gameMove = figureName
-    game();
+    await game ({token, gameId, gameMove});
   };
   
     threeButton.addEventListener('click', handlerGame);
@@ -275,4 +275,4 @@ function renderGamePage() {
 
 window.application.screens['game-page'] = renderGamePage;
 
-window.application.renderScreen('game-page');
+

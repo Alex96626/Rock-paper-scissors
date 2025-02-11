@@ -57,14 +57,14 @@ const getUserStatus = async ({token, gameId}) => {
     .then(response => response.json());
 }
 
-function game ({token, gameId, gameMove}) {
+async function game ({token, gameId, gameMove}) {
     const params = new URLSearchParams({
         token,
         id: gameId,
         move : gameMove,
     }).toString();
 
-    return fetch(`${BACKEND_URL}/play?${params}`)
+    await fetch(`${BACKEND_URL}/play?${params}`)
     .then(response => response.json())
     .then((data) => {
       if (data['game-status'].status === "lose") {

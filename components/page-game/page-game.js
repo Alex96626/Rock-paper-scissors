@@ -23,7 +23,7 @@ const renderHeader = (container) => {
           {
             block: 'p',
             cls: 'nickname-image-wrapper__text',
-            content: 'You',
+            content: window.application.me,
           },
           {
             block: 'img',
@@ -55,7 +55,7 @@ const renderHeader = (container) => {
           {
             block: 'p',
             cls: 'nickname-image-wrapper__text',
-            content: 'Machalka',
+            content: window.application.enemy.login,
           },
         ],
       },
@@ -113,7 +113,6 @@ const renderImageTimer = (container) => {
     }
   }, 1000);
 };
-
 
 window.application.blocks['image-timer'] = renderImageTimer;
 
@@ -253,7 +252,6 @@ const renderThreeButton = (container) => {
 };
 
 window.application.blocks['three-buttons'] = renderThreeButton;
-
 
 function renderGamePage() {
   const fragment = new DocumentFragment();

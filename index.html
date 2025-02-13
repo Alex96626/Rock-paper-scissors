@@ -18,6 +18,12 @@
           return;
         }
 
+        for (const timer of window.application.timers) {
+          clearInterval(timer);
+        }
+
+        window.application.timers = [];
+        
         const root = document.querySelector('.app');
         root.innerHTML = '';
         return window.application.screens[screenName]();

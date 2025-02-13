@@ -20,6 +20,7 @@ const handlerUpdateOpponents = async () => {
     for (const opponent of opponentsListWithoutPlayer) {
       newOpponentsList.append(browserTemplateEngine(oppontntTemplate(opponent)))
     }
+
     currentOpponentsList.innerHTML = '';
     currentOpponentsList.appendChild(newOpponentsList);
 }
@@ -133,7 +134,7 @@ const renderOpponents = async (container) => {
 
 window.application.blocks['opponents'] = renderOpponents;
 
-const renderStartMatcрButton = (container) => {
+const renderStartMatchButton = (container) => {
   const startMatchButtonTemplate = { 
     block: 'button',
     cls: ['button', 'button_theme-primary', 'button_start-match'],
@@ -151,11 +152,7 @@ const renderStartMatcрButton = (container) => {
       return;
     }
 
-    window.application.gameId = startMatch[`player-status`].game.id;
-
-    for (const timer of window.application.timers) {
-      clearInterval(timer);
-    }
+    window.application.gameId = startMatch[`player-status`].game.id;  
 
     window.application.renderScreen('waitingPage');
   })
@@ -163,7 +160,7 @@ const renderStartMatcрButton = (container) => {
   container.appendChild(startMatchButton);
 }
 
-window.application.blocks['startMatch'] = renderStartMatcрButton;
+window.application.blocks['startMatch'] = renderStartMatchButton;
 
 const renderLobbyPage = async () => {
   const fragment = new DocumentFragment();
@@ -182,6 +179,7 @@ const renderLobbyPage = async () => {
   app.appendChild(fragment);
   
   window.application.timers.push(setInterval(handlerUpdateOpponents, 1000));
+  
 }
 
 window.application.screens['lobbyPage'] = renderLobbyPage; 

@@ -85,6 +85,9 @@ const renderRpcPicture = (container) => {
   
       const formData = new FormData(target);
       const loginValue = formData.get('login'); 
+
+      window.application.me = loginValue;
+
       const params = new URLSearchParams({
         login: loginValue
       }).toString()

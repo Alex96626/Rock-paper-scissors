@@ -1,3 +1,21 @@
+const handlerWaitingOpponents = async () => {
+  const checkGameStatusParams = new URLSearchParams({ 
+    token: window.application.token,
+    id: window.application.gameId,
+  }).toString();
+
+ const status =  await fetch(`${BACKEND_URL}game-status?${checkGameStatusParams}`)
+ .then(response => response.json());
+
+ const statusValue = status['game-status'].status;
+console.log( console.log(status['game-status']))
+ if(statusValue === 'waiting-for-your-move') {
+  window.application.enemy = status['game-status'].enemy;
+  window.application.renderScreen('game-page');
+  // console.log('Игра началась!!!')
+ }
+}
+
 const renderContentWaitingPage = (container) => {
   const contentTemplate = { 
     block: 'div', 
@@ -75,6 +93,7 @@ const renderWaitingPageText = (container) => {
 window.application.blocks['waitingBlockText'] = renderWaitingPageText;
 
 const renderWaitingPage = async () => {
+
   const fragment = new DocumentFragment();
 
   window.application.renderBlock('contentWaitingPage', fragment);
@@ -91,25 +110,10 @@ const renderWaitingPage = async () => {
 
   app.appendChild(fragment);
 
-  setInterval( async () => {
-    const checkGameStatusParams = new URLSearchParams({ 
-      token: window.application.token,
-      id: window.application.gameId,
-    }).toString();
+  // setInterval( handlerWaitingOpponents, 1000);
 
-   const status =  await fetch(`${BACKEND_URL}game-status?${checkGameStatusParams}`)
-   .then(response => response.json());
+  window.application.timers.push(setInterval(handlerWaitingOpponents, 1000));
 
-   const statusValue = status['game-status'].status;
-
-   if(statusValue === 'waiting-for-your-move') {
-    // window.application.renderScreen[''];
-    console.log('Игра началась!!!')
-   }
-  
-  }, 1000)
 }
 
 window.application.screens['waitingPage'] = renderWaitingPage; 
-
-

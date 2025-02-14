@@ -145,4 +145,4 @@ const renderRpcPicture = (container) => {
   
   window.application.screens['start-page'] = renderStartPage; 
   
-  // window.application.renderScreen('start-page');
+  window.application.renderScreen('start-page');

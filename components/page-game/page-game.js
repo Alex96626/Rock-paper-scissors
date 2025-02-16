@@ -271,7 +271,7 @@ function renderGamePage() {
 
 window.application.screens['game-page'] = renderGamePage;
 
-window.application.renderScreen('game-page');
+// window.application.renderScreen('game-page');
 
 
 

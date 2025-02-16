@@ -68,10 +68,11 @@ async function game ({token, gameId, gameMove}) {
     .then(response => response.json())
     .then((data) => {
       if (data['game-status'].status === "lose") {
-        window.application.renderScreen('page-lose');
+        window.application.renderScreen('lose-page');
       }
       if (data['game-status'].status === "win") {
-        window.application.renderScreen('page-win');
+        debugger
+        window.application.renderScreen("win-page");
       }
       if (data['game-status'].status === 'waiting-for-your-move') {
         alert('ничья-повторите ход');

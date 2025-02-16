@@ -66,8 +66,6 @@ const renderHeader = (container) => {
 
   container.appendChild(header);
 
-  const nicknameRival = header.querySelector('.nickname-image-wrapper__text-rival');
-  // nicknameRival.textContent = 
 };
 
 window.application.blocks['rivals-wrapper'] = renderHeader;
@@ -272,5 +270,9 @@ function renderGamePage() {
 }
 
 window.application.screens['game-page'] = renderGamePage;
+
+window.application.renderScreen('game-page');
+
+
 
 

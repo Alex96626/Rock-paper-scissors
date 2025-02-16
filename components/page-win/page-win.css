@@ -40,8 +40,8 @@
 
 .figure-name-rivals__text {
   margin: var(--gap-хs) 0 0;
-  font-size: var(--text-size-l);
-  line-height: var(--text-line-m);
+  font-size: var(--text-size-l) ;
+  line-height: var(--text-line-m) ;
   color: var(--color-text);
   text-align: center;
 }
@@ -52,7 +52,7 @@
   justify-content: center;
 }
 
-.figure-name-player__image {
+.figure-name-player-border {
   color: var(--text-color);
   position: relative;
   width: 300px;
@@ -62,12 +62,9 @@
   text-align: center;
 }
 
-.figure-name-player__image::before {
+.figure-name-player{
   position: absolute;
   display: block;
-  content: "";
-  background-image: url('/components/page-win/images-page-win/rock.svg');
-  background-repeat: no-repeat;
   width: 114px;
   height: 136px;
   top: 50px;
@@ -81,7 +78,7 @@
   font-size: var(--figure-name-text-size);
   line-height: var(--figure-name-text-line);
   top: 210px;
-  left: 130px;
+  left: 130px ;
 }
 
 .result-game {
@@ -98,8 +95,8 @@
 .result-game__text {
   color: var(--color-title);
   margin: 0;
-  font-size: var(--title-text-size);
-  line-height: var(--title-text-line);
+  font-size: var(--title-text-size) ;
+  line-height: var(--title-text-line) ;
 }
 
 .buttons-page-win {
@@ -111,7 +108,7 @@
 }
 
 .buttons-page-win__position {
-  margin-top: var(--gap-l);
+  margin-top: var(--gap-l) ;
 }
 
 .button {
@@ -122,7 +119,7 @@
   overflow: hidden;
   cursor: pointer;
 }
-
+  
 .button:focus {
   outline: none;
 }

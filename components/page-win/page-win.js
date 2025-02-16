@@ -1,7 +1,7 @@
 const renderContentWinBlock = (container) => {
   const contentWinTemplate = {
-    block: 'div',
-    cls: 'content',
+    block: "div",
+    cls: "content",
   };
 
   const content = browserTemplateEngine(contentWinTemplate);
@@ -9,52 +9,52 @@ const renderContentWinBlock = (container) => {
   container.appendChild(content);
 };
 
-window.application.blocks['content'] = renderContentWinBlock;
+window.application.blocks["content"] = renderContentWinBlock;
 
 const renderHeaderWinPage = (container) => {
   const headerWinPageTemplate = {
-    block: 'header',
-    cls: 'rivals-wrapper',
+    block: "header",
+    cls: "rivals-wrapper",
     content: [
       {
-        block: 'div',
-        cls: ['nickname-image-wrapper', 'nickname-image-wrapper__player'],
+        block: "div",
+        cls: ["nickname-image-wrapper", "nickname-image-wrapper__player"],
         content: [
           {
-            block: 'p',
-            cls: 'nickname-image-wrapper__text',
+            block: "p",
+            cls: "nickname-image-wrapper__text",
             content: window.application.me,
           },
           {
-            block: 'img',
-            cls: 'nickname-image-wrapper__avatar',
+            block: "img",
+            cls: "nickname-image-wrapper__avatar",
             attrs: {
-              alt: 'avatar',
-              src: '/components/page-game/images-page-game/ava-one.png',
+              alt: "avatar",
+              src: "/components/page-game/images-page-game/ava-one.png",
             },
           },
         ],
       },
       {
-        block: 'div',
-        cls: 'rivals-wrapper__text-VS',
-        content: 'VS',
+        block: "div",
+        cls: "rivals-wrapper__text-VS",
+        content: "VS",
       },
       {
-        block: 'div',
-        cls: ['nickname-image-wrapper', 'nickname-image-wrapper__rival'],
+        block: "div",
+        cls: ["nickname-image-wrapper", "nickname-image-wrapper__rival"],
         content: [
           {
-            block: 'img',
-            cls: 'nickname-image-wrapper__avatar',
+            block: "img",
+            cls: "nickname-image-wrapper__avatar",
             attrs: {
-              alt: 'avatar',
-              src: '/components/page-game/images-page-game/ava-two.png',
+              alt: "avatar",
+              src: "/components/page-game/images-page-game/ava-two.png",
             },
           },
           {
-            block: 'p',
-            cls: 'nickname-image-wrapper__text',
+            block: "p",
+            cls: "nickname-image-wrapper__text",
             content: window.application.enemy.login,
           },
         ],
@@ -67,89 +67,90 @@ const renderHeaderWinPage = (container) => {
   container.appendChild(headerWinPage);
 };
 
-window.application.blocks['rivals-wrapper'] = renderHeaderWinPage;
+window.application.blocks["rivals-wrapper"] = renderHeaderWinPage;
 
 const renderFigureNameRivals = (container) => {
   const figureNameRivalsTemplate = {
-    block: 'div',
-    cls: 'figure-name-rivals__position',
+    block: "div",
+    cls: "figure-name-rivals__position",
     content: [
       {
-        block: 'div',
-        cls: 'figure-name-rivals__image',
+        block: "div",
+        cls: "figure-name-rivals__image",
         content: [
           {
-            block: 'img',
-            cls : 'image-figure-rival',
+            block: "img",
+            cls: "image-figure-rival",
             attrs: {
-              alt: 'figure',
-              src: '',
+              alt: "figure",
+              src: "",
             },
           },
         ],
       },
       {
-        block: 'p',
-        cls: 'figure-name-rivals__text',
-        content: '',
+        block: "p",
+        cls: "figure-name-rivals__text",
+        content: "",
       },
-    ],   
+    ],
   };
 
   const figureNameRivals = browserTemplateEngine(figureNameRivalsTemplate);
 
   container.appendChild(figureNameRivals);
 
-  const imageFigureRival = figureNameRivals.querySelector('.image-figure-rival');
-  const textFigureRival = figureNameRivals.querySelector('.figure-name-rivals__text');
+  const imageFigureRival = figureNameRivals.querySelector(
+    ".image-figure-rival"
+  );
+  const textFigureRival = figureNameRivals.querySelector(
+    ".figure-name-rivals__text"
+  );
 
   const figurePlayer = window.application.gameMove;
-  
-  if (figurePlayer === 'rock') {
 
-    imageFigureRival.src = '/components/page-win/images-page-win/scissors.png';
+  if (figurePlayer === "rock") {
+    imageFigureRival.src = "/components/page-win/images-page-win/scissors.png";
 
-    textFigureRival.textContent = 'scissors';
-  };
+    textFigureRival.textContent = "scissors";
+  }
 
-  if (figurePlayer === 'scissors') {
+  if (figurePlayer === "scissors") {
+    imageFigureRival.src = "/components/page-win/images-page-win/paper.png";
 
-    imageFigureRival.src = '/components/page-win/images-page-win/paper.png';
+    textFigureRival.textContent = "paper";
+  }
 
-    textFigureRival.textContent = 'paper';
-  };
+  if (figurePlayer === "paper") {
+    imageFigureRival.src = "/components/page-win/images-page-win/rock.svg";
 
-  if (figurePlayer === 'paper') {
-
-    imageFigureRival.src = '/components/page-win/images-page-win/rock.svg';
-
-    textFigureRival.textContent = 'rock';
-  };
+    textFigureRival.textContent = "rock";
+  }
 };
 
-window.application.blocks['figureNameRivals'] = renderFigureNameRivals;
+window.application.blocks["figureNameRivals"] = renderFigureNameRivals;
 
-const renderFigureNamePlayer = (container) => {
+const renderFigureNamePlayerWin = (container) => {
   const figureNamePlayerTemplate = {
-    block: 'div',
-    cls: 'figure-name-player__position',
+    block: "div",
+    cls: "figure-name-player__position",
     content: [
       {
-        block: 'div',
-        cls: 'figure-name-player-border',
+        block: "div",
+        cls: "figure-name-player-border",
         content: [
           {
-            block: 'img',
-            cls: 'figure-name-player',
+            block: "img",
+            cls: "figure-name-player",
             attrs: {
-              alt: 'figure',
-              src: '',
-              },
+              alt: "figure",
+              src: "",
+            },
           },
           {
-            block: 'p',
-            cls: 'figure-name-player__text',
-            content: '',
+            block: "p",
+            cls: "figure-name-player__text",
+            content: "",
           },
         ],
       },
@@ -160,51 +161,51 @@ const renderFigureNamePlayer = (container) => {
 
   container.appendChild(figureNamePlayer);
 
-  const imageFigurePlayer = figureNamePlayer.querySelector('.figure-name-player');
-  const textFigurePlayer = figureNamePlayer.querySelector('.figure-name-player__text');
+  const imageFigurePlayer = figureNamePlayer.querySelector(
+    ".figure-name-player"
+  );
+  const textFigurePlayer = figureNamePlayer.querySelector(
+    ".figure-name-player__text"
+  );
 
   const figurePlayer = window.application.gameMove;
 
-  if (figurePlayer === 'rock') {
+  if (figurePlayer === "rock") {
+    imageFigurePlayer.src = "/components/page-win/images-page-win/rock.svg";
 
-    imageFigurePlayer.src = '/components/page-win/images-page-win/rock.svg';
+    textFigurePlayer.textContent = "Rock";
+  }
 
-    textFigurePlayer.textContent = 'Rock';
-  };
+  if (figurePlayer === "scissors") {
+    imageFigurePlayer.src = "/components/page-win/images-page-win/scissors.png";
 
-  if (figurePlayer === 'scissors') {
+    textFigurePlayer.textContent = "Scissors";
+  }
 
-    imageFigurePlayer.src = '/components/page-win/images-page-win/scissors.png';
+  if (figurePlayer === "paper") {
+    imageFigurePlayer.src = "/components/page-win/images-page-win/paper.svg";
 
-    textFigurePlayer.textContent = 'Scissors';
-  };
-
-  if (figurePlayer === 'paper') {
-    
-    imageFigurePlayer.src = '/components/page-win/images-page-win/paper.svg';
-
-    textFigurePlayer.textContent = 'Paper';
-  };
-
+    textFigurePlayer.textContent = "Paper";
+  }
 };
 
-window.application.blocks['figureNamePlayer'] = renderFigureNamePlayer;
+window.application.blocks["figureNamePlayer"] = renderFigureNamePlayerWin;
 
 const renderResultGame = (container) => {
   const resultGameTemplate = {
-    block: 'div',
-    cls: ['result-game', 'result-game__position'],
+    block: "div",
+    cls: ["result-game", "result-game__position"],
     content: [
       {
-        block: 'p',
-        cls: 'result-game__text',
-        content: 'You won',
+        block: "p",
+        cls: "result-game__text",
+        content: "You won",
       },
       {
-        block: 'img',
+        block: "img",
         attrs: {
-          alt: 'fire',
-          src: '/components/page-win/images-page-win/fire.svg',
+          alt: "fire",
+          src: "/components/page-win/images-page-win/fire.svg",
         },
       },
     ],
@@ -213,25 +214,24 @@ const renderResultGame = (container) => {
   const resultGame = browserTemplateEngine(resultGameTemplate);
 
   container.appendChild(resultGame);
-
 };
 
-window.application.blocks['result-game'] = renderResultGame;
+window.application.blocks["result-game"] = renderResultGame;
 
 const renderButtonsPageWin = (container) => {
   const buttonsPageWinTemplate = {
-    block: 'div',
-    cls: ['buttons-page-win', 'buttons-page-win__position'],
+    block: "div",
+    cls: ["buttons-page-win", "buttons-page-win__position"],
     content: [
       {
-        block: 'button',
-        cls: ['button', 'button_theme_primary'],
-        content: 'Next round',
+        block: "button",
+        cls: ["button", "button_theme_primary"],
+        content: "Next round",
       },
       {
-        block: 'button',
-        cls: ['button', 'button_theme_secondary'],
-        content: 'Cancel',
+        block: "button",
+        cls: ["button", "button_theme_secondary"],
+        content: "Cancel",
       },
     ],
   };
@@ -240,43 +240,39 @@ const renderButtonsPageWin = (container) => {
 
   container.appendChild(buttonsPageWin);
 
-  const buttonRestart = buttonsPageWin.querySelector('.button_theme_primary');
-  const buttonLobby = buttonsPageWin.querySelector('.button_theme_secondary');
+  const buttonRestart = buttonsPageWin.querySelector(".button_theme_primary");
+  const buttonLobby = buttonsPageWin.querySelector(".button_theme_secondary");
 
-  buttonRestart.addEventListener('click', () => {
-
-    window.application.renderScreen('game-page');
-
+  buttonRestart.addEventListener("click", () => {
+    window.application.renderScreen("game-page");
   });
 
-  buttonLobby.addEventListener('click', () => {
-
-    window.application.renderScreen('lobbyPage');
-
+  buttonLobby.addEventListener("click", () => {
+    window.application.renderScreen("lobbyPage");
   });
 };
 
-window.application.blocks['buttons-page-win'] = renderButtonsPageWin ;
+window.application.blocks["buttons-page-win"] = renderButtonsPageWin;
 
 function renderWinPage() {
   const fragment = new DocumentFragment();
 
-  window.application.renderBlock('content', fragment);
+  window.application.renderBlock("content", fragment);
 
-  const content = fragment.querySelector('.content');
+  const content = fragment.querySelector(".content");
 
-  window.application.renderBlock('rivals-wrapper', content);
+  window.application.renderBlock("rivals-wrapper", content);
 
-  window.application.renderBlock('figureNameRivals', content);
-  window.application.renderBlock('figureNamePlayer', content);
-  window.application.renderBlock('result-game', content);
-  window.application.renderBlock('buttons-page-win', content);
+  window.application.renderBlock("figureNameRivals", content);
+  window.application.renderBlock("figureNamePlayer", content);
+  window.application.renderBlock("result-game", content);
+  window.application.renderBlock("buttons-page-win", content);
 
-  const app = document.querySelector('.app');
+  const app = document.querySelector(".app");
 
   app.appendChild(fragment);
 }
 
-window.application.screens['win-page'] = renderWinPage;
+window.application.screens["win-page"] = renderWinPage;
 
-window.application.renderScreen('win-page');
+// window.application.renderScreen("win-page");

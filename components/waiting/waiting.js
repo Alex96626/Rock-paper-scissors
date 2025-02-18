@@ -5,7 +5,7 @@ const handlerWaitingOpponents = async () => {
   }).toString();
 
   const status = await fetch(
-    `${BACKEND_URL}game-status?${checkGameStatusParams}`
+    `${BACKEND_URL}/game-status?${checkGameStatusParams}`
   ).then((response) => response.json());
 
   const statusValue = status["game-status"].status;

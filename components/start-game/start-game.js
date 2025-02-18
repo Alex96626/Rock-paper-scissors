@@ -92,7 +92,7 @@ const renderRpcPicture = (container) => {
         login: loginValue
       }).toString()
   
-      const login = await fetch(`${BACKEND_URL}login?${params}`)
+      const login = await fetch(`${BACKEND_URL}/login?${params}`)
       .then(response => response.json())
       .then(data => {
         window.application.token = data.token;

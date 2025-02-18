@@ -3,7 +3,7 @@ const getPlayerList = async () => {
     'token': window.application.token,
   }).toString();
   
-  return fetch(`${BACKEND_URL}player-list?${params}`)
+  return fetch(`${BACKEND_URL}/player-list?${params}`)
   .then(response => response.json())
   .then(data => data.list); 
 }

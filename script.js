@@ -84,4 +84,4 @@ async function game ({token, gameId, gameMove}) {
     });
     
 }
-const BACKEND_URL = 'https://skypro-rock-scissors-paper-backend.vercel.app/';
+const BACKEND_URL = 'https://skypro-rock-scissors-paper-backend.vercel.app';

@@ -17,16 +17,15 @@ const handlerWaitingOpponents = async () => {
   }
 
   if (statusValue === "lose") {
+    debugger
     window.application.renderScreen("lose-page");
   }
 
   if (statusValue === "win") {
-    debugger;
     window.application.renderScreen("win-page");
   }
 
   if (statusValue === "waiting-for-your-move") {
-    alert("ничья-повторите ход");
     return;
   }
 };

@@ -9,7 +9,7 @@ const renderContentLoseBlock = (container) => {
   container.appendChild(content);
 };
 
-window.application.blocks["content"] = renderContentLoseBlock;
+window.application.blocks["content-lose"] = renderContentLoseBlock;
 
 const renderHeaderLosePage = (container) => {
   const headerLosePageTemplate = {
@@ -67,7 +67,7 @@ const renderHeaderLosePage = (container) => {
   container.appendChild(headerLosePage);
 };
 
-window.application.blocks["rivals-wrapper"] = renderHeaderLosePage;
+window.application.blocks["rivals-wrapper-lose"] = renderHeaderLosePage;
 
 const renderFigureNameRival = (container) => {
   const figureNameRivalTemplate = {
@@ -126,7 +126,7 @@ const renderFigureNameRival = (container) => {
   }
 };
 
-window.application.blocks["figureNameRival"] = renderFigureNameRival;
+window.application.blocks["figureNameRival-lose"] = renderFigureNameRival;
 
 const renderFigureNamePlayerLose = (container) => {
   const figureNamePlayerTemplate = {
@@ -187,7 +187,7 @@ const renderFigureNamePlayerLose = (container) => {
   }
 };
 
-window.application.blocks["figureNamePlayer"] = renderFigureNamePlayerLose;
+window.application.blocks["figureNamePlayer-lose"] = renderFigureNamePlayerLose;
 
 const renderResultGameLose = (container) => {
   const resultGameLoseTemplate = {
@@ -214,7 +214,7 @@ const renderResultGameLose = (container) => {
   container.appendChild(resultGameLose);
 };
 
-window.application.blocks["result-game"] = renderResultGameLose;
+window.application.blocks["result-game-lose"] = renderResultGameLose;
 
 const renderButtonsPageLose = (container) => {
   const buttonsPageLoseTemplate = {
@@ -241,10 +241,11 @@ const renderButtonsPageLose = (container) => {
   const buttonRestart = buttonsPageLose.querySelector(".button_theme_primary");
   const buttonLobby = buttonsPageLose.querySelector(".button_theme_secondary");
 
-  buttonRestart.addEventListener("click", () => {
+  buttonRestart.addEventListener("click", async () => {
     console.log("клик рестарт");
-
-    window.application.renderScreen("game-page");
+    const startMatch = await getStartMatch(window.application.token);
+    window.application.gameId = startMatch[`player-status`].game.id;
+    window.application.renderScreen('waitingPage');
   });
 
   buttonLobby.addEventListener("click", () => {
@@ -254,20 +255,20 @@ const renderButtonsPageLose = (container) => {
   });
 };
 
-window.application.blocks["buttons-page-finish"] = renderButtonsPageLose;
+window.application.blocks["buttons-page-lose-finish"] = renderButtonsPageLose;
 
 function renderLosePage() {
   const fragment = new DocumentFragment();
 
-  window.application.renderBlock("content", fragment);
+  window.application.renderBlock("content-lose", fragment);
 
   const content = fragment.querySelector(".content");
 
-  window.application.renderBlock("rivals-wrapper", content);
-  window.application.renderBlock("figureNameRival", content);
-  window.application.renderBlock("figureNamePlayer", content);
-  window.application.renderBlock("result-game", content);
-  window.application.renderBlock("buttons-page-finish", content);
+  window.application.renderBlock("rivals-wrapper-lose", content);
+  window.application.renderBlock("figureNameRival-lose", content);
+  window.application.renderBlock("figureNamePlayer-lose", content);
+  window.application.renderBlock("result-game-lose", content);
+  window.application.renderBlock("buttons-page-lose-finish", content);
 
   const app = document.querySelector(".app");
 

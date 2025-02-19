@@ -10,6 +10,13 @@
     color: var(--color-header-player-nickname-text-inactive);
 }
 
+.user-info__avatar {
+    width: 58px;
+    height: 58px;
+
+    box-sizing: border-box;
+}
+
 .title_lobby {
     margin-top: 93px;
 

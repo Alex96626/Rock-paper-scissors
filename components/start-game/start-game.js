@@ -40,7 +40,7 @@ const renderRpcPicture = (container) => {
     const textTemplate = { 
       block: 'p',
       cls: 'rps-text',
-      content: 'Rock-Paper-Scissors.Fight in the big arena in front of a million spectators',
+      content: 'Камень ножницы бумага. Битва на большой арене под взгляды миллиона наблюдателей',
     };
   
     const text = browserTemplateEngine(textTemplate);
@@ -60,7 +60,7 @@ const renderRpcPicture = (container) => {
           cls: ['form-login__value', 'button', 'button_theme-secondary'],
           attrs: {
             'type': 'text',
-            'placeholder': 'Login',
+            'placeholder': 'Логин',
             'name': 'login',
             'required': true
           },

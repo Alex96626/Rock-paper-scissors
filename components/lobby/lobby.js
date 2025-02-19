@@ -41,7 +41,7 @@ window.application.blocks['contentLobby'] = renderContentBlockLobby;
 const renderUserInfo = async (container) => {
   const currentOpponentsList = await getPlayerList();
   const getPlayer = currentOpponentsList.find(player => player.you);
-  const playerName = getPlayer.login;
+  const playerName = getPlayer?.login;
 
     const userInfoTemplate = { 
       block: 'header', 
@@ -57,7 +57,7 @@ const renderUserInfo = async (container) => {
           cls: 'user-info__avatar',
           attrs: {
             alt: '',
-            src: '',
+            src: './components/page-game/images-page-game/ava-one.png',
           }
         }
       ]

@@ -243,8 +243,10 @@ const renderButtonsPageWin = (container) => {
   const buttonRestart = buttonsPageWin.querySelector(".button_theme_primary");
   const buttonLobby = buttonsPageWin.querySelector(".button_theme_secondary");
 
-  buttonRestart.addEventListener("click", () => {
-    window.application.renderScreen("game-page");
+  buttonRestart.addEventListener("click", async () => {
+    const startMatch = await getStartMatch(window.application.token);
+    window.application.gameId = startMatch[`player-status`].game.id;
+    window.application.renderScreen('waitingPage');
   });
 
   buttonLobby.addEventListener("click", () => {

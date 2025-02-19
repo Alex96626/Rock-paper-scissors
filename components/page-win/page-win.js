@@ -55,7 +55,7 @@ const renderHeaderWinPage = (container) => {
           {
             block: "p",
             cls: "nickname-image-wrapper__text",
-            content: window.application.enemy.login,
+            content: window.application.enemy,
           },
         ],
       },
@@ -110,19 +110,19 @@ const renderFigureNameRivals = (container) => {
   const figurePlayer = window.application.gameMove;
 
   if (figurePlayer === "rock") {
-    imageFigureRival.src = "/components/page-win/images-page-win/scissors.png";
+    imageFigureRival.src = "/components/page-win/images-page-win/rival-scissors-lose.svg";
 
     textFigureRival.textContent = "scissors";
   }
 
   if (figurePlayer === "scissors") {
-    imageFigureRival.src = "/components/page-win/images-page-win/paper.png";
+    imageFigureRival.src = "/components/page-win/images-page-win/rival-paper-lose.svg";
 
     textFigureRival.textContent = "paper";
   }
 
   if (figurePlayer === "paper") {
-    imageFigureRival.src = "/components/page-win/images-page-win/rock.svg";
+    imageFigureRival.src = "/components/page-win/images-page-win/rival-rock-lose.svg";
 
     textFigureRival.textContent = "rock";
   }
@@ -171,19 +171,19 @@ const renderFigureNamePlayerWin = (container) => {
   const figurePlayer = window.application.gameMove;
 
   if (figurePlayer === "rock") {
-    imageFigurePlayer.src = "/components/page-win/images-page-win/rock.svg";
+    imageFigurePlayer.src = "/components/page-win/images-page-win/player-rock-win.svg";
 
     textFigurePlayer.textContent = "Rock";
   }
 
   if (figurePlayer === "scissors") {
-    imageFigurePlayer.src = "/components/page-win/images-page-win/scissors.png";
+    imageFigurePlayer.src = "/components/page-win/images-page-win/player-scissors-win.svg";
 
     textFigurePlayer.textContent = "Scissors";
   }
 
   if (figurePlayer === "paper") {
-    imageFigurePlayer.src = "/components/page-win/images-page-win/paper.svg";
+    imageFigurePlayer.src = "/components/page-win/images-page-win/player-paper-win.svg";
 
     textFigurePlayer.textContent = "Paper";
   }
@@ -274,5 +274,3 @@ function renderWinPage() {
 }
 
 window.application.screens["win-page"] = renderWinPage;
-
-// window.application.renderScreen("win-page");

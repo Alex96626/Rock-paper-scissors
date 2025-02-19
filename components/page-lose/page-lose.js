@@ -55,7 +55,7 @@ const renderHeaderLosePage = (container) => {
           {
             block: "p",
             cls: "nickname-image-wrapper__text",
-            content: window.application.enemy.login,
+            content: window.application.enemy,
           },
         ],
       },
@@ -108,20 +108,19 @@ const renderFigureNameRival = (container) => {
   const figurePlayer = window.application.gameMove;
 
   if (figurePlayer === "rock") {
-    imageFigureRival.src = "";
+    imageFigureRival.src = "/components/page-lose/images-page-lose/rival-paper-win.svg";
 
     textFigureRival.textContent = "Paper";
   }
 
   if (figurePlayer === "scissors") {
-    imageFigureRival.src =
-      "/components/page-lose/images-page-lose/rock-win.png";
+    imageFigureRival.src ="/components/page-lose/images-page-lose/rival-rock-win.svg";
 
     textFigureRival.textContent = "Rock";
   }
 
   if (figurePlayer === "paper") {
-    imageFigureRival.src = "";
+    imageFigureRival.src = "/components/page-lose/images-page-lose/rival-scissors-win.svg";
 
     textFigureRival.textContent = "Scissors";
   }
@@ -143,7 +142,7 @@ const renderFigureNamePlayerLose = (container) => {
             cls: "image-figure-player",
             attrs: {
               alt: "figure",
-              src: "/components/page-lose/images-page-lose/player-scissors-lose.png",
+              src: "",
             },
           },
         ],
@@ -170,21 +169,19 @@ const renderFigureNamePlayerLose = (container) => {
   const figurePlayer = window.application.gameMove;
 
   if (figurePlayer === "rock") {
-    imageFigurePlayer.src = "";
+    imageFigurePlayer.src = "/components/page-lose/images-page-lose/player-rock-lose.svg";
 
     textFigurePlayer.textContent = "Rock";
   }
 
   if (figurePlayer === "scissors") {
-    imageFigurePlayer.src =
-      "/components/page-lose/images-page-lose/player-scissors-lose.png";
+    imageFigurePlayer.src = "/components/page-lose/images-page-lose/player-scissors-lose.svg";
 
     textFigurePlayer.textContent = "Scissors";
   }
 
   if (figurePlayer === "paper") {
-    imageFigurePlayer.src =
-      "/components/page-lose/images-page-lose/player-paper-lose.png";
+    imageFigurePlayer.src = "/components/page-lose/images-page-lose/player-paper-lose.svg";
 
     textFigurePlayer.textContent = "Paper";
   }

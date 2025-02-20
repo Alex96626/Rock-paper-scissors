@@ -57,17 +57,18 @@
   }
   
   .figure-name-rival__text {
-    position: absolute;
+    /* position: absolute; */
     margin: 0;
     color: var(--color-figure-name-enemy-won);
     font-size: var(--figure-name-text-size);
     line-height: var(--figure-name-text-line);
-    top: 220px;
-    left: 125px ;
+    /* top: 220px;
+    left: 125px ; */
   }
   
   .figure-name-player__position {
     margin-top: var(--gap-хs);
+    flex-direction: column;
     text-align: center;
   }
   

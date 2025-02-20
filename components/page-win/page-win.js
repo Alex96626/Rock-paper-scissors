@@ -205,7 +205,7 @@ const renderResultGame = (container) => {
         block: "img",
         attrs: {
           alt: "fire",
-          src: "/components/page-win/images-page-win/fire.svg",
+          src: "./components/page-win/images-page-win/fire.svg",
         },
       },
     ],

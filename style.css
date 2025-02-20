@@ -81,8 +81,6 @@
 }
 
 .button {
-  width: 420px;
-  max-width: 100%;
   box-sizing: border-box;
   
   padding: var(--gap-s) var(--gap-m);
@@ -99,7 +97,10 @@
 }
 
 .button_theme-secondary {
-
+  width: 420px;
+  max-width: 100%;
+  box-sizing: border-box;
+  
   background-color: transparent;
 
   display: -webkit-box;
@@ -113,6 +114,10 @@
 }
 
 .button_theme-primary {
+  width: 420px;
+  max-width: 100%;
+  box-sizing: border-box;
+
   position: relative;
 
   display: -webkit-box;

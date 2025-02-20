@@ -85,7 +85,7 @@
   
   padding: var(--gap-s) var(--gap-m);
 
-  border: none;
+  /* border: none; */
 
   border-radius: 10px;
 
@@ -100,7 +100,7 @@
   width: 420px;
   max-width: 100%;
   box-sizing: border-box;
-  
+
   background-color: transparent;
 
   display: -webkit-box;

@@ -30,7 +30,7 @@ const renderHeader = (container) => {
             cls: 'nickname-image-wrapper__avatar',
             attrs: {
               alt: 'avatar',
-              src: '/components/page-game/images-page-game/ava-one.png',
+              src: './components/page-game/images-page-game/ava-one.png',
             },
           },
         ],
@@ -49,7 +49,7 @@ const renderHeader = (container) => {
             cls: 'nickname-image-wrapper__avatar',
             attrs: {
               alt: 'avatar',
-              src: '/components/page-game/images-page-game/ava-two.png',
+              src: './components/page-game/images-page-game/ava-two.png',
             },
           },
           {
@@ -123,7 +123,7 @@ const renderImageFigureInitial = (container) => {
         block: 'img',
         attrs: {
           alt: 'Rock',
-          src: '/components/page-game/images-page-game/image-figure-initial.svg',
+          src: './components/page-game/images-page-game/image-figure-initial.svg',
         },
       },
     ],
@@ -167,7 +167,7 @@ const renderThreeButton = (container) => {
             cls: 'button__image-size',
             attrs: {
               alt: 'Rock',
-              src: '/components/page-game/images-page-game/rock.svg',
+              src: './components/page-game/images-page-game/rock.svg',
             },
           },
           {
@@ -189,7 +189,7 @@ const renderThreeButton = (container) => {
             cls: ['button__image-size'], 
             attrs: {
               alt: 'Scissors',
-              src: '/components/page-game/images-page-game/scissors.svg',
+              src: './components/page-game/images-page-game/scissors.svg',
             },
           },
           {
@@ -211,7 +211,7 @@ const renderThreeButton = (container) => {
             cls: 'button__image-size',
             attrs: {
               alt: 'Paper',
-              src: '/components/page-game/images-page-game/paper.svg',
+              src: './components/page-game/images-page-game/paper.svg',
             },
           },
           {

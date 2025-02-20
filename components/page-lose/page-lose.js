@@ -83,13 +83,13 @@ const renderFigureNameRival = (container) => {
             cls: "figure-name-rival",
             attrs: {
               alt: "figure",
-              src: "./components/page-lose/images-page-lose/rock-win.png",
+              src: "",
             },
           },
           {
             block: "p",
             cls: "figure-name-rival__text",
-            content: "Rock",
+            content: "",
           },
         ],
       },
@@ -203,7 +203,7 @@ const renderResultGameLose = (container) => {
         block: "img",
         attrs: {
           alt: "lose",
-          src: "/components/page-lose/images-page-lose/image-lose.svg",
+          src: "./components/page-lose/images-page-lose/image-lose.svg",
         },
       },
     ],

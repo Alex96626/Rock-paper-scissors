@@ -110,19 +110,19 @@ const renderFigureNameRival = (container) => {
   if (figurePlayer === "rock") {
     imageFigureRival.src = "./components/page-lose/images-page-lose/rival-paper-win.svg";
 
-    textFigureRival.textContent = "Paper";
+    textFigureRival.textContent = "Камень";
   }
 
   if (figurePlayer === "scissors") {
     imageFigureRival.src ="./components/page-lose/images-page-lose/rival-rock-win.svg";
 
-    textFigureRival.textContent = "Rock";
+    textFigureRival.textContent = "Ножницы";
   }
 
   if (figurePlayer === "paper") {
     imageFigureRival.src = "./components/page-lose/images-page-lose/rival-scissors-win.svg";
 
-    textFigureRival.textContent = "Scissors";
+    textFigureRival.textContent = "Бумага";
   }
 };
 
@@ -197,7 +197,7 @@ const renderResultGameLose = (container) => {
       {
         block: "p",
         cls: "result-game__text",
-        content: "You lost",
+        content: "Ты проиграл",
       },
       {
         block: "img",
@@ -224,12 +224,12 @@ const renderButtonsPageLose = (container) => {
       {
         block: "button",
         cls: ["button", "button_theme_primary"],
-        content: "Next round",
+        content: "Играть снова",
       },
       {
         block: "button",
         cls: ["button", "button_theme_secondary"],
-        content: "Cancel",
+        content: "В лобби",
       },
     ],
   };

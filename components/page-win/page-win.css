@@ -46,7 +46,7 @@
   text-align: center;
 }
 
-.figure-name-player__position {
+.figure-name-player-win__position {
   margin-top: var(--gap-m);
   display: flex;
   justify-content: center;
@@ -62,21 +62,21 @@
   text-align: center;
 }
 
-.figure-name-player{
+.figure-name-player-win {
   position: absolute;
   display: block;
-  top: 50px;
+  top: 45px;
   left: 110px;
 }
 
-.figure-name-player__text {
+.figure-name-player-win__text {
   position: absolute;
   margin: 0;
   color: var(--color-figure-name-you-won);
   font-size: var(--figure-name-text-size);
   line-height: var(--figure-name-text-line);
-  top: 210px;
-  left: 130px ;
+  top: 220px;
+  left: 125px ;
 }
 
 .result-game {
@@ -108,16 +108,7 @@
 .buttons-page-win__position {
   margin-top: var(--gap-l) ;
 }
-
-/* .button {
-  box-sizing: border-box;
-  border-radius: var(--border-radius-s);
-  background-color: transparent;
-  font-family: "Inter", "Times New Roman", serif;
-  overflow: hidden;
-  cursor: pointer;
-} */
-  
+ 
 .button:focus {
   outline: none;
 }

@@ -133,7 +133,7 @@ window.application.blocks["figureNameRivals"] = renderFigureNameRivals;
 const renderFigureNamePlayerWin = (container) => {
   const figureNamePlayerTemplate = {
     block: "div",
-    cls: "figure-name-player__position",
+    cls: "figure-name-player-win__position",
     content: [
       {
         block: "div",
@@ -141,7 +141,7 @@ const renderFigureNamePlayerWin = (container) => {
         content: [
           {
             block: "img",
-            cls: "figure-name-player",
+            cls: "figure-name-player-win",
             attrs: {
               alt: "figure",
               src: "",
@@ -149,7 +149,7 @@ const renderFigureNamePlayerWin = (container) => {
           },
           {
             block: "p",
-            cls: "figure-name-player__text",
+            cls: "figure-name-player-win__text",
             content: "",
           },
         ],
@@ -162,10 +162,10 @@ const renderFigureNamePlayerWin = (container) => {
   container.appendChild(figureNamePlayer);
 
   const imageFigurePlayer = figureNamePlayer.querySelector(
-    ".figure-name-player"
+    ".figure-name-player-win"
   );
   const textFigurePlayer = figureNamePlayer.querySelector(
-    ".figure-name-player__text"
+    ".figure-name-player-win__text"
   );
 
   const figurePlayer = window.application.gameMove;

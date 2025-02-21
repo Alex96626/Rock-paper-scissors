@@ -55,7 +55,7 @@ const renderHeaderLosePage = (container) => {
           {
             block: "p",
             cls: "nickname-image-wrapper__text",
-            content: window.application.enemy,
+            content: window.application.enemy.login,
           },
         ],
       },

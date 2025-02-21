@@ -203,7 +203,7 @@ const renderResultGameLose = (container) => {
         block: "img",
         attrs: {
           alt: "lose",
-          src: "../components/page-lose/images-page-lose/image-lose.svg",
+          src: "./components/page-lose/images-page-lose/image-lose.svg",
         },
       },
     ],

@@ -178,7 +178,7 @@ const renderLobbyPage = async () => {
   const app = document.querySelector('.app');
   app.appendChild(fragment);
   
-  window.application.timers.push(setInterval(handlerUpdateOpponents, 1000));
+  window.application.timers.push(setInterval(handlerUpdateOpponents, 5000));
   
 }
 

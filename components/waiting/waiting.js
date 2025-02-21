@@ -143,7 +143,8 @@ const renderWaitingPage = async () => {
 
   // setInterval( handlerWaitingOpponents, 1000);
 
-  window.application.timers.push(setInterval(handlerWaitingOpponents, 0));
+  window.application.timers.push(setInterval(handlerWaitingOpponents, 5000));
+
 };
 
 window.application.screens["waitingPage"] = renderWaitingPage;

@@ -173,19 +173,19 @@ const renderFigureNamePlayerWin = (container) => {
   if (figurePlayer === "rock") {
     imageFigurePlayer.src = "./components/page-win/images-page-win/player-rock-win.svg";
 
-    textFigurePlayer.textContent = "Rock";
+    textFigurePlayer.textContent = "Камень";
   }
 
   if (figurePlayer === "scissors") {
     imageFigurePlayer.src = "./components/page-win/images-page-win/player-scissors-win.svg";
 
-    textFigurePlayer.textContent = "Scissors";
+    textFigurePlayer.textContent = "Ножницы";
   }
 
   if (figurePlayer === "paper") {
     imageFigurePlayer.src = "./components/page-win/images-page-win/player-paper-win.svg";
 
-    textFigurePlayer.textContent = "Paper";
+    textFigurePlayer.textContent = "Бумага";
   }
 };
 
@@ -199,7 +199,7 @@ const renderResultGame = (container) => {
       {
         block: "p",
         cls: "result-game__text",
-        content: "You won",
+        content: "Ты выйграл",
       },
       {
         block: "img",
@@ -226,12 +226,12 @@ const renderButtonsPageWin = (container) => {
       {
         block: "button",
         cls: ["button", "button_theme_primary"],
-        content: "Next round",
+        content: "играть снова",
       },
       {
         block: "button",
         cls: ["button", "button_theme_secondary"],
-        content: "Cancel",
+        content: "В лобби",
       },
     ],
   };

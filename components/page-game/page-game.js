@@ -173,7 +173,7 @@ const renderThreeButton = (container) => {
           {
             block: 'span',
             cls: 'button__text',
-            content: 'Rock',
+            content: 'Камень',
           },
         ],
       },
@@ -195,7 +195,7 @@ const renderThreeButton = (container) => {
           {
             block: 'span',
             cls: 'button__text',
-            content: 'Scissors',
+            content: 'Ножницы',
           },
         ],
       },
@@ -217,7 +217,7 @@ const renderThreeButton = (container) => {
           {
             block: 'span',
             cls: 'button__text',
-            content: 'Paper',
+            content: 'Бумага',
           },
         ],
       },

@@ -123,7 +123,7 @@ const renderImageFigureInitial = (container) => {
         block: 'img',
         attrs: {
           alt: 'Rock',
-          src: './components/page-game/images-page-game/image-figure-initial.svg',
+          src: './components/page-game/images-page-game/rock-initial.svg',
         },
       },
     ],

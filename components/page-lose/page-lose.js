@@ -30,7 +30,7 @@ const renderHeaderLosePage = (container) => {
             cls: "nickname-image-wrapper__avatar",
             attrs: {
               alt: "avatar",
-              src: "./components/page-game/images-page-game/ava-one.png",
+              src: "/components/page-game/images-page-game/ava-one.png",
             },
           },
         ],
@@ -49,7 +49,7 @@ const renderHeaderLosePage = (container) => {
             cls: "nickname-image-wrapper__avatar",
             attrs: {
               alt: "avatar",
-              src: "./components/page-game/images-page-game/ava-two.png",
+              src: "/components/page-game/images-page-game/ava-two.png",
             },
           },
           {
@@ -83,7 +83,7 @@ const renderFigureNameRival = (container) => {
             cls: "figure-name-rival",
             attrs: {
               alt: "figure",
-              src: "",
+              src: "/components/page-lose/images-page-lose/rock-win.png",
             },
           },
           {
@@ -108,19 +108,19 @@ const renderFigureNameRival = (container) => {
   const figurePlayer = window.application.gameMove;
 
   if (figurePlayer === "rock") {
-    imageFigureRival.src = "./components/page-lose/images-page-lose/rival-paper-win.svg";
+    imageFigureRival.src = "/components/page-lose/images-page-lose/rival-paper-win.svg";
 
     textFigureRival.textContent = "Paper";
   }
 
   if (figurePlayer === "scissors") {
-    imageFigureRival.src ="./components/page-lose/images-page-lose/rival-rock-win.svg";
+    imageFigureRival.src ="/components/page-lose/images-page-lose/rival-rock-win.svg";
 
     textFigureRival.textContent = "Rock";
   }
 
   if (figurePlayer === "paper") {
-    imageFigureRival.src = "./components/page-lose/images-page-lose/rival-scissors-win.svg";
+    imageFigureRival.src = "/components/page-lose/images-page-lose/rival-scissors-win.svg";
 
     textFigureRival.textContent = "Scissors";
   }
@@ -169,19 +169,19 @@ const renderFigureNamePlayerLose = (container) => {
   const figurePlayer = window.application.gameMove;
 
   if (figurePlayer === "rock") {
-    imageFigurePlayer.src = "./components/page-lose/images-page-lose/player-rock-lose.svg";
+    imageFigurePlayer.src = "/components/page-lose/images-page-lose/player-rock-lose.svg";
 
     textFigurePlayer.textContent = "Rock";
   }
 
   if (figurePlayer === "scissors") {
-    imageFigurePlayer.src = "./components/page-lose/images-page-lose/player-scissors-lose.svg";
+    imageFigurePlayer.src = "/components/page-lose/images-page-lose/player-scissors-lose.svg";
 
     textFigurePlayer.textContent = "Scissors";
   }
 
   if (figurePlayer === "paper") {
-    imageFigurePlayer.src = "./components/page-lose/images-page-lose/player-paper-lose.svg";
+    imageFigurePlayer.src = "/components/page-lose/images-page-lose/player-paper-lose.svg";
 
     textFigurePlayer.textContent = "Paper";
   }

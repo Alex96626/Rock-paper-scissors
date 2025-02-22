@@ -47,18 +47,22 @@
     border-radius: 50%;
     border: 1px dashed #fff;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   
   .figure-name-rival {
-    position: absolute;
+    /* position: absolute;
     display: block;
     top: 50px;
-    left: 100px;
+    left: 100px; */
   }
   
   .figure-name-rival__text {
     /* position: absolute; */
-    margin: 0;
+    margin: var(--gap-s) 0 0;
     color: var(--color-figure-name-enemy-won);
     font-size: var(--figure-name-text-size);
     line-height: var(--figure-name-text-line);

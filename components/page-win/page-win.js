@@ -199,7 +199,7 @@ const renderResultGame = (container) => {
       {
         block: "p",
         cls: "result-game__text",
-        content: "Ты выйграл",
+        content: "Ты выиграл",
       },
       {
         block: "img",

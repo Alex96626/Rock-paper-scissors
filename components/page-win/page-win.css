@@ -60,23 +60,17 @@
   border-radius: 50%;
   border: 1px dashed #fff;
   text-align: center;
-}
-
-.figure-name-player-win {
-  position: absolute;
-  display: block;
-  top: 45px;
-  left: 110px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .figure-name-player-win__text {
-  position: absolute;
-  margin: 0;
+  margin: var(--gap-s) 0 0;
   color: var(--color-figure-name-you-won);
   font-size: var(--figure-name-text-size);
   line-height: var(--figure-name-text-line);
-  top: 220px;
-  left: 125px ;
 }
 
 .result-game {

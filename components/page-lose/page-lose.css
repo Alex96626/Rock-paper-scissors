@@ -53,21 +53,11 @@
     align-items: center;
   }
   
-  .figure-name-rival {
-    /* position: absolute;
-    display: block;
-    top: 50px;
-    left: 100px; */
-  }
-  
   .figure-name-rival__text {
-    /* position: absolute; */
     margin: var(--gap-s) 0 0;
     color: var(--color-figure-name-enemy-won);
     font-size: var(--figure-name-text-size);
     line-height: var(--figure-name-text-line);
-    /* top: 220px;
-    left: 125px ; */
   }
   
   .figure-name-player__position {

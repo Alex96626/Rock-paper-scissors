@@ -107,6 +107,10 @@ const renderImageTimer = (container) => {
       const token = window.application.token;
       const gameId = window.application.gameId;
       const gameMove = randomFigure;
+      for (const timer of window.application.timers) {
+        clearInterval(timer);
+      }
+      
       await game({token, gameId, gameMove});  
     }
   }, 1000);

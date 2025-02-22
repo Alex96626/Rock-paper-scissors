@@ -17,7 +17,6 @@ const handlerWaitingOpponents = async () => {
   }
 
   if (statusValue === "lose") {
-    debugger
     window.application.renderScreen("lose-page");
   }
 

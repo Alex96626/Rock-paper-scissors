@@ -71,7 +71,6 @@ async function game ({token, gameId, gameMove}) {
         window.application.renderScreen('lose-page');
       }
       if (data['game-status'].status === "win") {
-        debugger
         window.application.renderScreen("win-page");
       }
       if (data['game-status'].status === 'waiting-for-your-move') {

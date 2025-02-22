@@ -114,15 +114,6 @@
     margin-top: var(--gap-l) ;
   }
   
-  /* .button {
-    box-sizing: border-box;
-    border-radius: var(--border-radius-s);
-    background-color: transparent;
-    font-family: "Inter", "Times New Roman", serif;
-    overflow: hidden;
-    cursor: pointer;
-  } */
-    
   .button:focus {
     outline: none;
   }

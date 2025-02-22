@@ -112,19 +112,19 @@ const renderFigureNameRivals = (container) => {
   if (figurePlayer === "rock") {
     imageFigureRival.src = "./components/page-win/images-page-win/rival-scissors-lose.svg";
 
-    textFigureRival.textContent = "scissors";
+    textFigureRival.textContent = "Ножницы";
   }
 
   if (figurePlayer === "scissors") {
     imageFigureRival.src = "./components/page-win/images-page-win/rival-paper-lose.svg";
 
-    textFigureRival.textContent = "paper";
+    textFigureRival.textContent = "Бумага";
   }
 
   if (figurePlayer === "paper") {
     imageFigureRival.src = "./components/page-win/images-page-win/rival-rock-lose.svg";
 
-    textFigureRival.textContent = "rock";
+    textFigureRival.textContent = "Камень";
   }
 };
 

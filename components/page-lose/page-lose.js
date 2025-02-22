@@ -110,19 +110,19 @@ const renderFigureNameRival = (container) => {
   if (figurePlayer === "rock") {
     imageFigureRival.src = "./components/page-lose/images-page-lose/rival-paper-win.svg";
 
-    textFigureRival.textContent = "Камень";
+    textFigureRival.textContent = "Бумага";
   }
 
   if (figurePlayer === "scissors") {
     imageFigureRival.src ="./components/page-lose/images-page-lose/rival-rock-win.svg";
 
-    textFigureRival.textContent = "Ножницы";
+    textFigureRival.textContent = "Камень";
   }
 
   if (figurePlayer === "paper") {
     imageFigureRival.src = "./components/page-lose/images-page-lose/rival-scissors-win.svg";
 
-    textFigureRival.textContent = "Бумага";
+    textFigureRival.textContent = "Ножницы";
   }
 };
 
@@ -171,19 +171,19 @@ const renderFigureNamePlayerLose = (container) => {
   if (figurePlayer === "rock") {
     imageFigurePlayer.src = "./components/page-lose/images-page-lose/player-rock-lose.svg";
 
-    textFigurePlayer.textContent = "Rock";
+    textFigurePlayer.textContent = "Камень";
   }
 
   if (figurePlayer === "scissors") {
     imageFigurePlayer.src = "./components/page-lose/images-page-lose/player-scissors-lose.svg";
 
-    textFigurePlayer.textContent = "Scissors";
+    textFigurePlayer.textContent = "Ножницы";
   }
 
   if (figurePlayer === "paper") {
     imageFigurePlayer.src = "./components/page-lose/images-page-lose/player-paper-lose.svg";
 
-    textFigurePlayer.textContent = "Paper";
+    textFigurePlayer.textContent = "Бумага";
   }
 };
 
